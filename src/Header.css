@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #0e0e0e;
+  }
+  
+  .header .logo {
+    padding-top: 1.5%;
+    font-size: 1.5rem;
+    font-weight: inherit;
+  }
+  
+  .header nav ul {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .header nav ul li {
+    list-style: none;
+  }
+  
+  .header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .about-container .about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between image and text */
+  }
+  
+  .about-image img {
+    width: 100px; /* Set width and height to the same value */
+    height: 100px;
+    border-radius: 50%; /* Make it a perfect circle */
+    object-fit: cover; /* Ensure the image covers the entire circle */
+  }
+  
