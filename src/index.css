@@ -1,3 +1,5 @@
+/* index.css */
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -13,19 +15,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and borders in width and height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100%; /* Ensure full width */
 }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column; /* Allow stacking of header and content */
   min-width: 320px;
   min-height: 100vh;
 }
@@ -46,9 +46,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -59,14 +61,17 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+  
   a:hover {
     color: #747bff;
   }
+  
   button {
     background-color: #f9f9f9;
   }
 }
 
+/* Font styles for Roboto */
 .roboto-thin {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -137,4 +142,44 @@ button:focus-visible {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-style: italic;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  background: rgba(14, 14, 14, 0.8); /* Slightly transparent */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  position: fixed; /* Fix header at the top */
+  width: 100%; /* Full width */
+  height: 60px; /* Fixed height */
+  z-index: 1000; /* Above all other elements */
+}
+
+/* Main content styles */
+.App {
+  flex: 1; /* Allow main content to fill remaining space */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: flex-start; /* Align items to the top */
+  padding-top: 60px; /* Space for fixed header */
+}
+
+/* Sections styling */
+.main-section, .about-section, .work-section, .contact-section {
+  width: 100%; /* Full width of the viewport */
+  padding: 50px 20px; /* Padding for sections */
+  color: white; /* Text color */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-section, .about-section, .work-section, .contact-section {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
 }

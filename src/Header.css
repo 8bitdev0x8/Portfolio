@@ -1,41 +1,102 @@
+/* Header CSS */
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: #0e0e0e;
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  padding: 10px 20px; /* Adjust padding as needed */
+  background: rgba(255, 255, 255, 0.1); /* Light transparent background for frosted glass effect */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  position: fixed; /* Fix header at the top */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  z-index: 1000; /* Ensure it stays on top of other content */
+  width: 100%; /* Ensure header takes full width */
+  height: 70px; /* Set a fixed height for the header */
+  box-sizing: border-box; /* Include padding in width calculations */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Optional: add a border for separation */
+}
+
+/* About Image Styles */
+.about-image {
+  margin-right: 20px; /* Space between image and logo */
+  flex-shrink: 0; /* Prevent shrinking of the about image */
+}
+
+.about-image img {
+  width: 50px; /* Adjusted width for better alignment */
+  height: 50px; /* Adjusted height for better alignment */
+  border-radius: 50%; /* Make it a perfect circle */
+  object-fit: cover; /* Ensure the image covers the entire circle */
+}
+
+/* Logo Text */
+.logo {
+  color: white; /* Text color for the logo */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center text alignment */
+  flex-grow: 1; /* Allow the logo text to take available space */
+}
+
+/* Navigation Styles */
+.header nav {
+  flex-shrink: 0; /* Prevent shrinking of the nav */
+}
+
+.header nav ul {
+  display: flex; /* Use flexbox for navigation items */
+  gap: 20px; /* Space between items */
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  list-style: none; /* Remove bullet points */
+}
+
+.header nav ul li {
+  list-style: none; /* Ensure no list styling */
+}
+
+.header nav ul li a {
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Link text color */
+  font-size: 1rem; /* Font size for links */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.header nav ul li a:hover {
+  color: #bada55; /* Change color on hover */
+}
+
+/* Add padding to body to prevent content from being hidden behind the fixed header */
+body {
+  padding-top: 70px; /* Space equal to the height of the header */
+  margin: 0; /* Remove default margin */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 15px; /* Adjust padding for mobile */
   }
-  
-  .header .logo {
-    padding-top: 1.5%;
-    font-size: 1.5rem;
-    font-weight: inherit;
+
+  .about-image {
+    margin-bottom: 10px; /* Space below image on mobile */
   }
-  
+
   .header nav ul {
-    display: flex;
-    gap: 20px;
+    flex-direction: column; /* Stack nav items vertically */
+    gap: 10px; /* Space between items */
   }
-  
-  .header nav ul li {
-    list-style: none;
+
+  .logo {
+    font-size: 1.2rem; /* Smaller logo font size on mobile */
+    text-align: center; /* Ensure text is centered */
   }
-  
-  .header nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-  }
-  
-  .about-container .about-content {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Space between image and text */
-  }
-  
+
   .about-image img {
-    width: 100px; /* Set width and height to the same value */
-    height: 100px;
-    border-radius: 50%; /* Make it a perfect circle */
-    object-fit: cover; /* Ensure the image covers the entire circle */
+    width: 40px; /* Smaller image size on mobile */
+    height: 40px; /* Smaller image size on mobile */
   }
-  
+}

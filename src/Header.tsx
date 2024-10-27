@@ -1,3 +1,4 @@
+// Header.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
@@ -5,14 +6,14 @@ import './Header.css';
 const Header: React.FC = () => {
   return (
     <header className="header">
-      <div className="about-image">
+      {/* <div className="about-image">
         <img src="./JOJY.jpg" alt="Profile" />
-      </div>
+      </div> */}
       <div className="logo">JOJY SAJU JOSEPH</div>
       <nav>
         <ul>
-        <li>
-            <Link to="/Portfolio">Home</Link>
+          <li>
+            <Link to="/Portfolio/">Home</Link>
           </li>
           <li>
             <Link to="/work">Work</Link>
