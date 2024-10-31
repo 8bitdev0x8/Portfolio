@@ -7,7 +7,7 @@
   padding: 50px; /* Add padding */
   height: 100vh; /* Set height to fill the viewport */
   text-align: center; /* Center text alignment */
-  background: rgba(14, 14, 14, 0.8); /* Optional: set a background color with transparency for better visibility */
+  background: rgba(14, 14, 14, 0.8); /* Background color with transparency */
 }
 
 /* Intro text styling */
@@ -35,6 +35,7 @@
   font-size: 1.2rem; /* Font size for paragraph */
 }
 
+/* Profile Image Styles */
 .profile-image {
   display: flex; /* Use flexbox for the image container */
   justify-content: center; /* Center image horizontally */
@@ -54,6 +55,50 @@
   filter: grayscale(0%); /* Remove grayscale on hover */
 }
 
+/* VR Devices Section */
+.vr-devices {
+  margin-top: 40px; /* Space above */
+  text-align: center; /* Center align text */
+}
+
+.vr-devices h2 {
+  font-size: 2rem; /* Title size */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.tiles {
+  display: flex; /* Use flexbox for horizontal layout */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  gap: 15px; /* Space between tiles */
+  padding: 0 20px; /* Side padding */
+}
+
+.tile {
+  background-color: #444; /* Dark background for tiles */
+  color: #fff; /* White text */
+  padding: 10px; /* Padding inside tiles */
+  border-radius: 10px; /* Rounded corners */
+  display: flex; /* Flexbox for centering */
+  flex-direction: column; /* Stack image and text vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
+  cursor: pointer; /* Pointer cursor */
+  min-width: 120px; /* Minimum width for tiles */
+  max-width: 150px; /* Maximum width for tiles */
+}
+
+.tile:hover {
+  transform: translateY(-10px); /* Lift the tile up */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.tile-image {
+  width: 100%; /* Make image take full width of the tile */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Round corners for images */
+}
+
 /* Responsive Design: Tablet & Mobile */
 @media (max-width: 768px) {
   .main-section {
@@ -66,6 +111,19 @@
 
   .intro p {
     font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .vr-devices h2 {
+    font-size: 1.5rem; /* Smaller title size on mobile */
+  }
+
+  .tiles {
+    gap: 10px; /* Smaller gap on mobile */
+  }
+
+  .tile {
+    min-width: 100px; /* Adjust minimum width for mobile */
+    max-width: 120px; /* Adjust maximum width for mobile */
   }
 }
 

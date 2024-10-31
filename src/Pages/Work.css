@@ -1,0 +1,37 @@
+.work-page {
+    padding: 50px;
+    text-align: center;
+    color: white; /* Ensures the text is visible */
+    background: 
+        linear-gradient(rgba(14, 14, 14, 0.8), rgba(14, 14, 14, 0.8)), /* Dark overlay */
+        url('/lens.webp'); /* Background image from the public folder */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    min-height: 100vh; /* Ensures the section covers the viewport height */
+}
+
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+    margin-top: 30px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    transition: transform 0.3s; /* Smooth scaling effect on hover */
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Match the card's corners */
+}
