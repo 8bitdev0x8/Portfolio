@@ -1,179 +1,184 @@
+/* Main Section Styles */
 .main-section {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 50px;
-  flex-wrap: wrap; /* Ensure content wraps on small screens */
+  justify-content: flex-start;
+  padding: 20px;
+  min-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  background: rgba(14, 14, 14, 0.8);
+  box-sizing: border-box;
 }
 
+/* Intro text styling */
 .intro {
-  max-width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  flex-grow: 1;
 }
 
 .intro h1 {
-  font-size: 3rem; /* Responsive typography */
+  font-size: 2.5rem;
   animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 @keyframes text-focus-in {
-  0% {
-    filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    filter: blur(0px);
-    opacity: 1;
-  }
+  0% { filter: blur(12px); opacity: 0; }
+  100% { filter: blur(0px); opacity: 1; }
 }
-
-
-
 
 .intro p {
   font-size: 1.2rem;
 }
 
-.profile-image img {
-  border-radius: 50px;
-  -webkit-animation-name: pulse;
-  animation-name: pulse;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+/* Profile Image Styles */
+.profile-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 750px; /* Set max width */
-  max-height: 750px; /* Set max height */
-  width: auto;
-  height: auto;
-  filter: grayscale(100%); /* Make image black and white */
-  transition: filter 1s ease; /* Smooth transition effect */
-
-
+  margin-top: 20px;
 }
 
-
+.profile-image img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 15px; /* Small rounding for the corners */
+  filter: grayscale(100%);
+  transition: filter 1s ease;
+}
 
 .profile-image img:hover {
-  filter: grayscale(0%); /* Remove grayscale on hover */
+  filter: grayscale(0%);
 }
 
-@-webkit-keyframes pulse {
-  0% {
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1);
-  }
-  50% {
-  -webkit-transform: scale3d(1.05, 1.05, 1.05);
-  transform: scale3d(1.05, 1.05, 1.05);
-  }
-  100% {
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1);
-  }
-  }
-  @keyframes pulse {
-  0% {
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1);
-  }
-  50% {
-  -webkit-transform: scale3d(1.05, 1.05, 1.05);
-  transform: scale3d(1.05, 1.05, 1.05);
-  }
-  100% {
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1);
-  }
-  } 
+/* VR Devices Section */
+.vr-devices {
+  margin-top: 30px;
+  text-align: center;
+}
 
+.vr-devices h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
 
-
-.actions {
+.tiles {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 10px;
 }
 
-.contact-button {
-  padding: 10px 20px;
-  background-color: #bada55;
-  border: none;
-  border-radius: 5px;
+.tile {
+  background-color: #444;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  font-size: 1rem;
+  width: 130px;
+  max-width: 150px;
 }
 
-.social-link {
-  text-decoration: none;
-  padding: 10px 20px;
+.tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tile-image {
+  width: 100%;
+  height: auto;
   border-radius: 5px;
-  background-color: #333;
-  color: white;
-  font-size: 1rem;
 }
 
 /* Responsive Design: Tablet & Mobile */
 @media (max-width: 768px) {
-  .main-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .intro h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .intro p {
     font-size: 1rem;
   }
 
-  .actions {
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+  .vr-devices h2 {
+    font-size: 1.5rem;
+  }
+
+  .tile {
+    width: 100px;
   }
 }
 
-.actions {
+/* Ensure box-sizing is set globally for consistent padding and margin */
+* {
+  box-sizing: border-box;
+}
+
+/* Main Section Styles */
+.main-section {
+  position: relative; /* Positioning context for the pseudo-element */
   display: flex;
-  gap: 20px;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  min-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  background: rgba(14, 14, 14, 0.8); /* Background color with transparency */
+  box-sizing: border-box;
 }
 
-.contact-button {
-  padding: 10px 20px;
-  background-color: #e0ec72; /* Light green color */
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
+/* Adding the grid pattern */
+.main-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg, /* Vertical lines */
+    rgba(255, 255, 255, 0.1) 0,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px,
+    transparent 20px /* Spacing between lines */
+  ),
+  repeating-linear-gradient(
+    90deg, /* Horizontal lines */
+    rgba(255, 255, 255, 0.1) 0,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px,
+    transparent 20px /* Spacing between lines */
+  );
+  pointer-events: none; /* Allows clicks to go through to underlying elements */
+  z-index: 0; /* Send the grid to the back */
 }
 
-.dot {
-  margin-left: 10px;
-  font-size: 1.5rem;
-  line-height: 1;
+/* Ensure content sits on top of the grid */
+.intro, .vr-devices {
+  position: relative; /* Context for z-index */
+  z-index: 1; /* Bring content above the grid */
 }
 
-.social-link {
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 50%;
-  background-color: #333;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  font-size: 1.2rem;
+
+
+/* Custom selection color */
+::selection {
+  background-color: #bada55; /* Highlight color */
+  color: black; /* Text color when selected */
 }
 
-.social-link:hover {
-  background-color: #555; /* Darker shade on hover */
+/* For Firefox support */
+::-moz-selection {
+  background-color: #bada55; /* Highlight color */
+  color: black; /* Text color when selected */
 }
-
