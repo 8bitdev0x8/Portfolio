@@ -1,0 +1,117 @@
+/* Gallery.css */
+.gallery-container {
+    position: relative; /* Positioning context for the pseudo-element */
+    padding: 50px;
+    text-align: center;
+    color: white; /* Ensures text is visible */
+    min-height: 100vh; /* Ensures the section covers the viewport height */
+    box-sizing: border-box; /* Ensure padding doesn't affect total height */
+    overflow: hidden; /* Prevent overflow from content */
+}
+
+/* Adding the grid pattern for the gallery */
+.gallery-container::before {
+    content: "";
+    position: fixed; /* Fixed to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg, /* Vertical lines */
+        rgba(255, 255, 255, 0.1) 0,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px,
+        transparent 20px /* Spacing between lines */
+    ),
+    repeating-linear-gradient(
+        90deg, /* Horizontal lines */
+        rgba(255, 255, 255, 0.1) 0,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px,
+        transparent 20px /* Spacing between lines */
+    );
+    pointer-events: none; /* Allows clicks to go through to underlying elements */
+    z-index: 0; /* Send the grid to the back */
+}
+
+/* Ensure content sits on top of the grid */
+.gallery-display {
+    position: relative; /* Context for z-index */
+    z-index: 1; /* Bring content above the grid */
+    display: flex; /* Use flexbox to align items */
+    justify-content: center; /* Center the flex items */
+    align-items: flex-start; /* Align to the top for better layout */
+    gap: 30px; /* Space between image and description */
+}
+
+.gallery-image {
+    width: 400px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect */
+}
+
+.gallery-description {
+    max-width: 500px; /* Max width for description */
+    text-align: left; /* Align text to the left */
+    padding: 10px; /* Add padding for readability */
+    overflow: hidden; /* Hide overflow text */
+    height: auto; /* Allow it to grow with content */
+}
+
+.gallery-description h2 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Heading font size */
+}
+
+.gallery-description p {
+    font-size: 1rem; /* Paragraph font size */
+    line-height: 1.5; /* Increase line height for better readability */
+}
+
+/* Gallery button styles */
+.gallery-controls {
+    margin-top: 20px; /* Space above the controls */
+}
+
+.gallery-button {
+    background-color: transparent; /* Make the background transparent */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for better touch targets */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    margin: 0 10px; /* Add horizontal margin for spacing between buttons */
+}
+
+/* Change button color when hovered */
+.gallery-button:hover {
+    background-color: #bada55; /* Change background color on hover */
+    color: black; /* Change text color on hover for contrast */
+}
+
+/* Change button color when clicked */
+.gallery-button:active {
+    background-color: #bada55; /* Same as hover to maintain consistency */
+    color: black; /* Change text color on click */
+}
+
+/* Responsive styles */
+@media (max-width: 800px) {
+    .gallery-display {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .gallery-image {
+        width: 100%; /* Full width on small screens */
+        max-width: 500px; /* Max width for responsiveness */
+    }
+
+    .gallery-description {
+        text-align: center; /* Center text on small screens */
+        max-width: 100%; /* Allow full width for the description */
+    }
+}

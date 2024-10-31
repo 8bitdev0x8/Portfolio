@@ -1,0 +1,96 @@
+/* Contact Page Styles */
+.contact-container {
+    position: relative; /* Positioning context for the pseudo-element */
+    padding: 100px;
+    text-align: center;
+    color: white; /* Ensures the text is visible */
+    min-height: 100vh; /* Ensures the section covers the viewport height */
+    box-sizing: border-box; /* Ensure padding doesn't affect total height */
+    overflow: hidden; /* Prevent overflow from content */
+}
+
+/* Adding the grid pattern for the contact page */
+.contact-container::before {
+    content: "";
+    position: fixed; /* Fixed to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg, /* Vertical lines */
+        rgba(255, 255, 255, 0.1) 0,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px,
+        transparent 20px /* Spacing between lines */
+    ),
+    repeating-linear-gradient(
+        90deg, /* Horizontal lines */
+        rgba(255, 255, 255, 0.1) 0,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px,
+        transparent 20px /* Spacing between lines */
+    );
+    pointer-events: none; /* Allows clicks to go through to underlying elements */
+    z-index: 0; /* Send the grid to the back */
+}
+
+/* Ensure content sits on top of the grid */
+.contact-form {
+    position: relative; /* Context for z-index */
+    z-index: 1; /* Bring content above the grid */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Style for form labels */
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Style for form inputs and textareas */
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style for the submit button */
+.contact-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background-color: #005bb5;
+}
+
+/* Responsive Design: Adjust the layout based on screen size */
+@media (max-width: 600px) {
+    .contact-container {
+        padding: 20px; /* Less padding for small screens */
+    }
+}
+
+/* Highlight effect for text selection */
+::selection {
+    background-color: #bada55; /* Highlight color */
+    color: black; /* Text color when selected */
+}
+
+/* For Firefox support */
+::-moz-selection {
+    background-color: #bada55; /* Highlight color */
+    color: black; /* Text color when selected */
+}
