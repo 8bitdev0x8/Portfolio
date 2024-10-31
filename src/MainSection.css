@@ -1,169 +1,184 @@
 /* Main Section Styles */
 .main-section {
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
-  padding: 50px; /* Add padding */
-  height: 100vh; /* Set height to fill the viewport */
-  text-align: center; /* Center text alignment */
-  background: rgba(14, 14, 14, 0.8); /* Background color with transparency */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  min-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  background: rgba(14, 14, 14, 0.8);
+  box-sizing: border-box;
 }
 
 /* Intro text styling */
 .intro {
-  max-width: 600px; /* Set a max width for better readability */
+  max-width: 600px;
+  padding: 10px;
+  flex-grow: 1;
 }
 
 .intro h1 {
-  font-size: 3rem; /* Responsive typography */
+  font-size: 2.5rem;
   animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 @keyframes text-focus-in {
-  0% {
-    filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    filter: blur(0px);
-    opacity: 1;
-  }
+  0% { filter: blur(12px); opacity: 0; }
+  100% { filter: blur(0px); opacity: 1; }
 }
 
 .intro p {
-  font-size: 1.2rem; /* Font size for paragraph */
+  font-size: 1.2rem;
 }
 
 /* Profile Image Styles */
 .profile-image {
-  display: flex; /* Use flexbox for the image container */
-  justify-content: center; /* Center image horizontally */
-  align-items: center; /* Center image vertically */
-  margin-top: 20px; /* Space between text and image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .profile-image img {
-  border-radius: 50px; /* Adjust border radius */
-  max-width: 300px; /* Set max width for the image */
-  height: auto; /* Maintain aspect ratio */
-  filter: grayscale(100%); /* Make image black and white */
-  transition: filter 1s ease; /* Smooth transition effect */
+  max-width: 250px;
+  height: auto;
+  border-radius: 15px; /* Small rounding for the corners */
+  filter: grayscale(100%);
+  transition: filter 1s ease;
 }
 
 .profile-image img:hover {
-  filter: grayscale(0%); /* Remove grayscale on hover */
+  filter: grayscale(0%);
 }
 
 /* VR Devices Section */
 .vr-devices {
-  margin-top: 40px; /* Space above */
-  text-align: center; /* Center align text */
+  margin-top: 30px;
+  text-align: center;
 }
 
 .vr-devices h2 {
-  font-size: 2rem; /* Title size */
-  margin-bottom: 20px; /* Space below the title */
+  font-size: 1.8rem;
+  margin-bottom: 15px;
 }
 
 .tiles {
-  display: flex; /* Use flexbox for horizontal layout */
-  overflow-x: auto; /* Enable horizontal scrolling if needed */
-  gap: 15px; /* Space between tiles */
-  padding: 0 20px; /* Side padding */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 10px;
 }
 
 .tile {
-  background-color: #444; /* Dark background for tiles */
-  color: #fff; /* White text */
-  padding: 10px; /* Padding inside tiles */
-  border-radius: 10px; /* Rounded corners */
-  display: flex; /* Flexbox for centering */
-  flex-direction: column; /* Stack image and text vertically */
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
-  cursor: pointer; /* Pointer cursor */
-  min-width: 120px; /* Minimum width for tiles */
-  max-width: 150px; /* Maximum width for tiles */
+  background-color: #444;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  width: 130px;
+  max-width: 150px;
 }
 
 .tile:hover {
-  transform: translateY(-10px); /* Lift the tile up */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .tile-image {
-  width: 100%; /* Make image take full width of the tile */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Round corners for images */
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
 /* Responsive Design: Tablet & Mobile */
 @media (max-width: 768px) {
-  .main-section {
-    padding: 20px; /* Reduce padding on smaller screens */
-  }
-
   .intro h1 {
-    font-size: 2.5rem; /* Adjust font size for smaller screens */
+    font-size: 2rem;
   }
 
   .intro p {
-    font-size: 1rem; /* Adjust font size for smaller screens */
+    font-size: 1rem;
   }
 
   .vr-devices h2 {
-    font-size: 1.5rem; /* Smaller title size on mobile */
-  }
-
-  .tiles {
-    gap: 10px; /* Smaller gap on mobile */
+    font-size: 1.5rem;
   }
 
   .tile {
-    min-width: 100px; /* Adjust minimum width for mobile */
-    max-width: 120px; /* Adjust maximum width for mobile */
+    width: 100px;
   }
 }
 
-/* Button and Link Styles */
-.actions {
-  display: flex;
-  gap: 20px;
+/* Ensure box-sizing is set globally for consistent padding and margin */
+* {
+  box-sizing: border-box;
 }
 
-.contact-button {
-  padding: 10px 20px;
-  background-color: #bada55; /* Light green color */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
+/* Main Section Styles */
+.main-section {
+  position: relative; /* Positioning context for the pseudo-element */
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  min-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  background: rgba(14, 14, 14, 0.8); /* Background color with transparency */
+  box-sizing: border-box;
 }
 
-.dot {
-  margin-left: 10px;
-  font-size: 1.5rem;
-  line-height: 1;
+/* Adding the grid pattern */
+.main-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg, /* Vertical lines */
+    rgba(255, 255, 255, 0.1) 0,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px,
+    transparent 20px /* Spacing between lines */
+  ),
+  repeating-linear-gradient(
+    90deg, /* Horizontal lines */
+    rgba(255, 255, 255, 0.1) 0,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px,
+    transparent 20px /* Spacing between lines */
+  );
+  pointer-events: none; /* Allows clicks to go through to underlying elements */
+  z-index: 0; /* Send the grid to the back */
 }
 
-.social-link {
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 50%;
-  background-color: #333;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  font-size: 1.2rem;
+/* Ensure content sits on top of the grid */
+.intro, .vr-devices {
+  position: relative; /* Context for z-index */
+  z-index: 1; /* Bring content above the grid */
 }
 
-.social-link:hover {
-  background-color: #555; /* Darker shade on hover */
+
+
+/* Custom selection color */
+::selection {
+  background-color: #bada55; /* Highlight color */
+  color: black; /* Text color when selected */
+}
+
+/* For Firefox support */
+::-moz-selection {
+  background-color: #bada55; /* Highlight color */
+  color: black; /* Text color when selected */
 }

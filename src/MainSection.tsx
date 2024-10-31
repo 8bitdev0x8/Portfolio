@@ -29,32 +29,24 @@ const MainSection: React.FC = () => {
   return (
     <section className="main-section">
       <div className="intro roboto-thin-italic">
-        <h1>Hi, I am Jojy Saju Joseph</h1>
-        <p>
-          An Ireland-based AR/VR developer passionate about building next generation
-          interactive applications.
-        </p>
+        <h1>"Building Immersive Worlds, One Experience at a Time"</h1>
+        <h3>AR/VR Developer | Ireland-Based | Next-Generation Interactive Applications</h3>
 
         <div className="profile-image">
           <img
-            src="./JOJY1.jpg" // Ensure the path is correct
+            src="./Jojy_MagicLeap.jpeg" // Ensure the path is correct
             alt="Profile"
           />
         </div>
+        
+        <p>
+        "Hello! I'm JOJY SAJU JOSEPH, an AR/VR developer based in Ireland with a passion for crafting innovative, immersive experiences that connect users with cutting-edge technology. With a focus on creating visually rich, interactive applications, I bring stories to life, enhance user engagement, and push the boundaries of digital experiences. Whether it's augmented or virtual reality, I aim to transform ideas into captivating digital realities."
+        </p>
+
+        
       </div>
 
-      {/* VR Devices Section */}
-      <div className="vr-devices">
-        <h2>VR Devices I've Used</h2>
-        <div className="tiles">
-          {vrDevices.map((device) => (
-            <div className="tile" key={device.name}>
-              <img src={device.image} alt={device.name} className="tile-image" />
-              <span>{device.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      
     </section>
   );
 };
