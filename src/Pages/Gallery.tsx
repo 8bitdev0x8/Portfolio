@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Gallery.css'; // Import the CSS file for styling
+import './Gallery.css'; 
 import Aesthetic_Shot from '../Images/Aesthetic_Shot.jpg';
 import Passion_in_life from '../Images/Passion_in_life.jpg';
 import Business_headshot from '../Images/Jojy_business_type_headshot.jpg';
@@ -19,7 +19,7 @@ const images = [
     alt: 'Portrait',
     description: 'In this professional portrait, I focused on capturing a crisp, clean look by positioning myself against a subtle background, with just enough blur to maintain a soft, refined atmosphere. The shot was composed with a 48mm focal length, allowing for a flattering perspective and emphasizing facial features while still including a hint of the surroundings to add context. The natural light was carefully balanced, casting an even, soft illumination that highlights the face and attire without creating harsh shadows, enhancing the professional tone of the image. I chose an aperture of f/1.8 to make the subject stand out sharply against the softly blurred background, subtly separating the person from the background wall and lending the portrait a modern, polished look. The shutter speed of 1/121 seconds captured every detail with precision while preventing any motion blur, and keeping the ISO at 100 allowed for a noise-free, high-quality image with superb clarity and richness. This portrait uses natural lighting and a slight background blur to create an image that feels approachable yet professional, ideal for a business setting. The combination of technical settings and natural light captures a sharp, engaging portrait that communicates both professionalism and warmth.',
   },
-  // Add more images as needed
+
 ];
 
 const Gallery: React.FC = () => {

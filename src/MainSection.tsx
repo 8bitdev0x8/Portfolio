@@ -11,7 +11,7 @@ const MainSection: React.FC = () => {
 
         <div className="profile-image">
           <img
-            src="./Jojy_MagicLeap.jpeg" // Ensure the path is correct
+            src="./Jojy_MagicLeap.jpeg" 
             alt="Profile"
           />
         </div>

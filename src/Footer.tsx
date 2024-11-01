@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css'; // Make sure to create this CSS file
+import './Footer.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +8,6 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Social Media Links */}
       <div className="actions">
         <a href="https://www.linkedin.com/in/jojysaju/" className="social-link" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faLinkedin} /> LinkedIn

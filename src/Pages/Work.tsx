@@ -1,5 +1,5 @@
 import React from 'react';
-import './Work.css'; // Ensure the correct CSS file is imported
+import './Work.css'; 
 
 const Work: React.FC = () => {
     const projects = [

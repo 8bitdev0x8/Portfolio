@@ -1,6 +1,6 @@
 // About.tsx
 import React from "react";
-import "./About.css"; // Make sure to create this CSS file for styling
+import "./About.css"; 
 
 const About: React.FC = () => {
   return (
