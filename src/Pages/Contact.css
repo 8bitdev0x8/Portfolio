@@ -9,7 +9,7 @@
     overflow: hidden; /* Prevent overflow from content */
 }
 
-/* Adding the grid pattern for the contact page */
+/* Adding the grid pattern for the page */
 .contact-container::before {
     content: "";
     position: fixed; /* Fixed to cover the entire viewport */
