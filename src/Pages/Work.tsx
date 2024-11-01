@@ -1,5 +1,5 @@
 import React from 'react';
-import './Work.css'; // Ensure the correct CSS file is imported
+import './Work.css'; 
 
 const Work: React.FC = () => {
     const projects = [
@@ -37,7 +37,8 @@ const Work: React.FC = () => {
 
     return (
         <div className="work-page">
-            <h1>My Work</h1>
+          <div className="roboto-regular">
+            <h1>My Work</h1>           
             <p>Explore the technologies and projects I've worked on:</p>
             <div className="project-grid">
                 {projects.map((project, index) => (
@@ -48,6 +49,7 @@ const Work: React.FC = () => {
                     </div>
                 ))}
             </div>
+        </div>
         </div>
     );
 };
