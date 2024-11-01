@@ -5,7 +5,10 @@ import "./About.css"; // Make sure to create this CSS file for styling
 const About: React.FC = () => {
   return (
     <div className="about-container">
+      <div className="roboto-regular">
       <h1>About Me</h1>
+
+      <br></br>
 
       <section>
         <h2>Education</h2>
@@ -35,7 +38,7 @@ const About: React.FC = () => {
         </ul>
       </section>
 
-      
+      <br></br>
 
       <section>
         <h2>Technical Skills</h2>
@@ -58,6 +61,8 @@ const About: React.FC = () => {
         </ul>
       </section>
 
+      <br></br>
+
       <section>
         <h2>Awards & Acknowledgements</h2>
         <ul>
@@ -79,6 +84,7 @@ const About: React.FC = () => {
           </li>
         </ul>
       </section>
+    </div>
     </div>
   );
 };
