@@ -7,6 +7,10 @@ import Contact from './Pages/Contact';
 import Work from './Pages/Work'; 
 import Gallery from './Pages/Gallery'; 
 import Footer from './Footer'; 
+import Blog from './Pages/Blog';
+import VideoGallery from './Pages/VideoGallery';
+
+
 import './App.css';
 
 function App() {
@@ -20,6 +24,8 @@ function App() {
           <Route path="/gallery" element={<Gallery />} /> 
           <Route path="/contact" element={<Contact />} />
           <Route path="/work" element={<Work />} />   
+          <Route path="/Blog" element={<Blog />} />
+          <Route path="/VideoGallery" element={<VideoGallery />} />
         </Routes>
         <Footer />
       </div>

@@ -1,0 +1,84 @@
+/* Blog.css */
+
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .blog-post {
+    margin-bottom: 40px;
+  }
+  
+  .comment {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .comment img {
+    max-width: 200px;
+    margin-top: 10px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #bada55;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #bada55;
+    color: black;
+  }
+  
+  .reactions {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between the button and the text */
+  }
+  
+  .like-button {
+    margin-right: 10px; /* Alternatively, you can use margin for spacing */
+  }
+  
+  .timestamp {
+    font-size: 0.9em;
+    color: gray;
+  }
+  
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0; /* Add spacing between images */
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    margin: 5px; /* Optional: Spacing between images in case of grid layout */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Grid layout for images (optional) */
+  .images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 10px;
+  }
+  
