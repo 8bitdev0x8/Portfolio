@@ -1,60 +1,14 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { likePost, addComment } from '../blogSlice';
+import { RootState } from '../store';
 import './Blog.css';
-import Blog1_Image1 from '../Images/Blog_Images/Blog1/1.jpeg';
-import Blog1_Image2 from '../Images/Blog_Images/Blog1/2.jpeg';
-
-interface BlogPost {
-  id: number;
-  title: string;
-  date: string;
-  content: string;
-  author: string;
-  image: string[] | null;
-}
-
-interface Comment {
-  title: string;
-  author: string;
-  content: string;
-  image: string | null;
-  timestamp: string; // New property for date and time
-}
-
-const blogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: "Behind the Scenes: Shooting and Editing Our Video",
-    date: "November 29, 2024",
-    content: "Brainstorming Ideas Our group started by brainstorming a variety of creative product shoot ideas. Each membercontributed unique perspectives, resulting in several intriguing concepts.Selecting the Theme After discussing the options, we held a vote and decided to create a short video promoting safety for women. Assigning Roles Roles were divided among the team. I was responsible for video editing and managing the lighting. Additionally, I helped identify a suitable location for the shoot. The story required an outdoor setting, so we initially considered shooting in the city. However, managing a crowd with a small team of four, including two actors, proved impractical. We ultimately chose a quieter location on the Limerick campus. Challenges on Shoot Day The shoot day presented several hurdles. The overcast weather disrupted continuity, and interruptions from people walking through the area delayed progress. Despite these challenges, we managed to shoot half the story. Unfortunately, rain forced us to pack up early. Shifting to an Indoor Concept After the outdoor shoot setbacks, we revisited the brainstorming phase. The team decided on an indoor product shoot to avoid weather and crowd issues. Storyboarding and Planning The storyboard and script were finalized before moving forward with the new plan. This ensured we had a clear direction during the shoot. Equipment and Cast We shot the entire video using an iPhone. A friend volunteered to act, adding authenticity to the project. Execution We set up the required props and carefully arranged the frames and lighting for each scene. Once all necessary shots were captured, the team wrapped up. Post-Production The footage was uploaded to cloud storage for safekeeping. The next day, we gathered to edit the video. This included sound design, color grading, stabilization, and final touch-ups. Final Output The completed video was exported and compressed to under 25 MB without compromising quality. This comprehensive process encapsulated our journey from brainstorming to delivering a polished product.",
-    author: "Jojy Saju Joseph",
-    image: [Blog1_Image1, Blog1_Image2 ],
-  },
-  {
-    id: 2,
-    title: "Behind the Scenes: Shooting and Editing Our Video",
-    date: "November 20, 2024",
-    content: "We’ve reached our first major milestone! Thanks to all our supporters who made this possible. Here’s a quick recap of our journey so far.",
-    author: "Jojy Saju Joseph",
-    image: null,
-  },
-  {
-    id: 3,
-    title: "What’s Next?",
-    date: "November 10, 2024",
-    content: "The future is bright, and we have big plans ahead. Keep following us to stay updated on our latest projects and initiatives!",
-    author: "Emily White",
-    image: null,
-  },
-];
 
 const Blog: React.FC = () => {
-  const [comments, setComments] = useState<{ [postId: number]: Comment[] }>({});
-  const [likes, setLikes] = useState<{ [postId: number]: number }>(
-    blogPosts.reduce((acc, post) => {
-      acc[post.id] = 0; // Initialize each post with 0 likes
-      return acc;
-    }, {} as { [postId: number]: number })
-  );
+  const dispatch = useDispatch();
+  const blogPosts = useSelector((state: RootState) => state.blog.blogPosts);
+  const comments = useSelector((state: RootState) => state.blog.comments);
+  const likes = useSelector((state: RootState) => state.blog.likes);
 
   const [newComment, setNewComment] = useState({
     title: '',
@@ -76,27 +30,20 @@ const Blog: React.FC = () => {
   const handleSaveComment = (e: React.FormEvent<HTMLFormElement>, postId: number) => {
     e.preventDefault();
 
-    const currentDateTime = new Date().toLocaleString(); // Get current date and time
-
+    const currentDateTime = new Date().toLocaleString();
     const commentWithImage = {
       ...newComment,
       image: newComment.image ? URL.createObjectURL(newComment.image) : null,
-      timestamp: currentDateTime, // Add the timestamp
+      timestamp: currentDateTime,
     };
 
-    setComments((prevComments) => ({
-      ...prevComments,
-      [postId]: [...(prevComments[postId] || []), commentWithImage],
-    }));
+    dispatch(addComment({ postId, comment: commentWithImage }));
 
     setNewComment({ title: '', author: '', content: '', image: null });
   };
 
   const handleLike = (postId: number) => {
-    setLikes((prevLikes) => ({
-      ...prevLikes,
-      [postId]: (prevLikes[postId] || 0) + 1,
-    }));
+    dispatch(likePost(postId));
   };
 
   return (
@@ -108,15 +55,14 @@ const Blog: React.FC = () => {
           <p>
             <em>{post.date}</em>
           </p>
-    
           <p>{post.content}</p>
           <p>
             {post.image &&
               post.image.map((image, idx) => (
-            <div key={idx} className="image-container">
-              <img src={image} alt={`${post.title} - Image ${idx + 1}`} />
-            </div>
-          ))}
+                <div key={idx} className="image-container">
+                  <img src={image} alt={`${post.title} - Image ${idx + 1}`} />
+                </div>
+              ))}
           </p>
           <p><strong>Author:</strong> {post.author}</p>
 
@@ -158,7 +104,7 @@ const Blog: React.FC = () => {
               <h4>{cmt.title}</h4>
               <p>{cmt.author}</p>
               <p>{cmt.content}</p>
-              {cmt.timestamp && <p className="timestamp"><em>{cmt.timestamp}</em></p>} {/* Display the timestamp */}
+              {cmt.timestamp && <p className="timestamp"><em>{cmt.timestamp}</em></p>}
               {cmt.image && <img src={cmt.image} alt="Comment Attachment" />}
             </div>
           ))}
