@@ -1,41 +1,53 @@
-// Header.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import logo from '../public/JOJY1.jpg';
 
 const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="header">
-      {/* <div className="about-image">
-        <img src="./JOJY.jpg" alt="Profile" />
-      </div> */}
+      <div className="about-image img">
+        <img src={logo} alt="Profile" />
+      </div>
       <div className="logo">JOJY SAJU JOSEPH</div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/Portfolio/">Home</Link>
-          </li>
-          <li>
-            <Link to="/work">Work</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/gallery">Gallery</Link>
-          </li> 
-          <li>
-            <Link to="/Blog">Blog</Link>
-          </li> 
-          <li>
-            <Link to="/VideoGallery">VideoGallery</Link>
-          </li> 
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          
-        </ul>
-      </nav>
+      <div className="logo">
+        <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+          <ul>
+            <li>
+              <Link to="/Portfolio/">Home</Link>
+            </li>
+            <li>
+              <Link to="/work">Work</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/gallery">Gallery</Link>
+            </li>
+            <li>
+              <Link to="/Blog">Blog</Link>
+            </li>
+            <li>
+              <Link to="/VideoGallery">VideoGallery</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+        <button className="hamburger" onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
+      </div>
     </header>
   );
 };

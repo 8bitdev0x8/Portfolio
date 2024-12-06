@@ -1,8 +1,25 @@
-// Contact.tsx
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 
 const Contact: React.FC = () => {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    // Show success alert
+    alert("Message sent successfully!");
+
+    // Set formSubmitted to true to show the message on the page
+    setFormSubmitted(true);
+
+    // Reset the form fields
+    e.currentTarget.reset();
+
+    // Automatically hide the message after a few seconds
+    setTimeout(() => setFormSubmitted(false), 5000);
+  };
+
   return (
     <div>
       <div className="contact-container">
@@ -18,7 +35,7 @@ const Contact: React.FC = () => {
         </p>
 
         {/* Contact Form */}
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>
           <input
             type="text"
@@ -49,6 +66,11 @@ const Contact: React.FC = () => {
             Send Message
           </button>
         </form>
+
+        {/* Success Message */}
+        {formSubmitted && (
+          <p className="success-message">Message sent successfully!</p>
+        )}
       </div>
     </div>
   );
