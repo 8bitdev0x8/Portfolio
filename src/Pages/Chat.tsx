@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
-const socket = io.connect('http://localhost:5174');
+const socket = io('http://localhost:5174');
 
 interface ChatMessage {
   message: string;
