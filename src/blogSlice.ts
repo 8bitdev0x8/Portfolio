@@ -37,14 +37,6 @@ const initialState: BlogState = {
       author: "Jojy Saju Joseph",
       image: [Blog1_Image1, Blog1_Image2],
     },
-    // {
-    //   id: 2,
-    //   title: "Behind the Scenes: Shooting and Editing Our Video",
-    //   date: "November 20, 2024",
-    //   content: "We’ve reached our first major milestone...",
-    //   author: "Jojy Saju Joseph",
-    //   image: null,
-    // },
   ],
   comments: {},
   likes: {
