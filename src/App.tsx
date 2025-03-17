@@ -9,6 +9,7 @@ import Gallery from './Pages/Gallery';
 import Footer from './Footer'; 
 import Blog from './Pages/Blog';
 import VideoGallery from './Pages/VideoGallery';
+import CS6042 from './Pages/CS6042';
 
 
 import './App.css';
@@ -26,6 +27,7 @@ function App() {
           <Route path="/work" element={<Work />} />   
           <Route path="/Blog" element={<Blog />} />
           <Route path="/VideoGallery" element={<VideoGallery />} />
+          <Route path="/CS6042" element={<CS6042 />} />
         </Routes>
         <Footer />
       </div>

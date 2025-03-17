@@ -29,7 +29,7 @@ const Header: React.FC = () => {
               <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/gallery">Gallery</Link>
+              <Link to="/CS6042">CS6042</Link>
             </li>
             <li>
               <Link to="/Blog">Blog</Link>
@@ -41,6 +41,9 @@ const Header: React.FC = () => {
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
+
+          
+
         </nav>
         <button className="hamburger" onClick={toggleMenu}>
           <span className="bar"></span>
