@@ -8,7 +8,14 @@ const CS6042: React.FC = () => {
   const markdownContent = `
 # CS6042 - INTERACTIVE MEDIA PROJECT
 
-## In-class Workshop - Games, Algorithms, and Interactions
+
+## Week 1 - Select and read about a work from the [Cybernetic Serendipity Exhibition 1968](https://monoskop.org/images/2/2a/Reichardt_Jasia_ed_Cybernetic_Serendipidity_The_Computer_and_the_Arts_1969.pdf)
+
+![Cybernetic_Serendipidity](/Portfolio/static/images/Cybernetic_Serendipidity.png)
+
+---
+## \`Week 2 - Algorithms\`
+### In-class Workshop - Games, Algorithms, and Interactions
 
 ## Procedural Drawing  
 
@@ -31,6 +38,48 @@ Design a game by which you will make drawings on a paper.
 
 ---
 
+### Week 3 - Interactive Art Storyboard Assignment
+
+\`Together We Feed!\`
+
+Together We Feed! is an innovative, interactive solution designed to combat
+hunger while fostering community engagement. Positioned in high-traffic
+public spaces such as malls, shopping centers, and bus stops, this captivating
+installation features a dynamic globe that displays real-time hunger statistics,
+creating awareness and empathy.
+Beneath the globe, a food donation box invites people to contribute nonperishable items, making giving both convenient and impactful. Additionally,
+the unit supports cashless donations through card payments, offering multiple
+ways for people to help fight hunger with ease.
+This powerful blend of education, engagement, and action transforms
+everyday public spaces into hubs of social good, uniting people with a shared
+mission: to nourish the world, one donation at a time.
+
+![StoryBoard](/Portfolio/static/images/StoryBoard_1.png)
+
+Story Board - Together We Feed!
+
+![StoryBoard](/Portfolio/static/images/StoryBoard_2.png)
+
+---
+
+### Week 4 - Audio Primer Editing and Composing
+
+## Audio Primer  
+
+### Editing and Composing  
+
+![Sound Composition](/Portfolio/static/images/Sound_Composition.png)
+
+<audio controls>
+  <source src="/Portfolio/static/audio/Sound_Composition.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+Inspired by [Watson's](https://chriswatsonreleases.bandcamp.com/) listening create a short 1-minute composition is Audacity layering the sounds you have created for your Freesound library.
+
+---
+
+### Week 5 - Algorithmic Soundscapes
 ##  Algorithmic Music Software
 
 <video width="640" height="360" controls>
@@ -38,22 +87,6 @@ Design a game by which you will make drawings on a paper.
   Your browser does not support the video tag.
 </video>
 
-
----
-
-
-## Audio Primer  
-
-### Editing and Composing  
-
-[audio sample](https://freesound.org/people/ne0_h3x/sounds/790022/)
-
-<audio controls>
-  <source src="https://freesound.org/people/ne0_h3x/sounds/790022/download/790022__ne0_h3x__sample.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
----
 
 ## Interactive/Algorithmic Soundscape Performance
 
@@ -71,7 +104,11 @@ This challenge, while initially frustrating, became a source of inspiration, as 
 
 The rules for my performance were inspired by the in-class workshop on **"Games, Algorithms, and Interactions."** In this workshop, procedural drawing rules were used, where a die is rolled to determine aspects of their drawings. I was intrigued by this element of chance and procedural generation, and I wanted to apply a similar approach to my performance design. Instead of drawings, I incorporated a rule-based system where sound sequences were generated and manipulated based on a set of predefined constraints.  
 
+![Algorithmic Soundscape Rules](/Portfolio/static/images/Algorithmic_Soundscape_Rules.png)
+
 ## Custom Modifications  
+
+![Algorithmic Soundscape](/Portfolio/static/images/Algorithmic_Soundscape.png)
 
 As part of my modifications, I have implemented:  
 
